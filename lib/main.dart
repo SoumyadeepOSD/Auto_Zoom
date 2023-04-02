@@ -1,193 +1,193 @@
-// import 'package:adv_camera/adv_camera.dart';
-// import 'package:flutter/material.dart';
+// // import 'package:adv_camera/adv_camera.dart';
+// // import 'package:flutter/material.dart';
 
-// void main() {
-//   String id = DateTime.now().toIso8601String();
-//   runApp(MaterialApp(home: MyApp(id: id)));
-// }
+// // void main() {
+// //   String id = DateTime.now().toIso8601String();
+// //   runApp(MaterialApp(home: MyApp(id: id)));
+// // }
 
-// class MyApp extends StatefulWidget {
-//   final String id;
+// // class MyApp extends StatefulWidget {
+// //   final String id;
 
-//   const MyApp({Key? key, required this.id}) : super(key: key);
+// //   const MyApp({Key? key, required this.id}) : super(key: key);
 
-//   @override
-//   _MyAppState createState() => _MyAppState();
-// }
+// //   @override
+// //   _MyAppState createState() => _MyAppState();
+// // }
 
-// class _MyAppState extends State<MyApp> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('Home'),
-//       ),
-//       body: Center(child: Text('Press Floating Button to access camera')),
-//       floatingActionButton: FloatingActionButton(
-//         heroTag: "test3",
-//         child: Icon(Icons.camera),
-//         onPressed: () {
-//           Navigator.push(
-//             context,
-//             MaterialPageRoute(
-//               builder: (BuildContext context) {
-//                 String id = DateTime.now().toIso8601String();
-//                 return CameraApp(id: id);
-//               },
-//             ),
-//           );
-//         },
-//       ),
-//     );
-//   }
-// }
+// // class _MyAppState extends State<MyApp> {
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Scaffold(
+// //       appBar: AppBar(
+// //         title: const Text('Home'),
+// //       ),
+// //       body: Center(child: Text('Press Floating Button to access camera')),
+// //       floatingActionButton: FloatingActionButton(
+// //         heroTag: "test3",
+// //         child: Icon(Icons.camera),
+// //         onPressed: () {
+// //           Navigator.push(
+// //             context,
+// //             MaterialPageRoute(
+// //               builder: (BuildContext context) {
+// //                 String id = DateTime.now().toIso8601String();
+// //                 return CameraApp(id: id);
+// //               },
+// //             ),
+// //           );
+// //         },
+// //       ),
+// //     );
+// //   }
+// // }
 
-// class CameraApp extends StatefulWidget {
-//   final String id;
+// // class CameraApp extends StatefulWidget {
+// //   final String id;
 
-//   const CameraApp({Key? key, required this.id}) : super(key: key);
+// //   const CameraApp({Key? key, required this.id}) : super(key: key);
 
-//   @override
-//   _CameraAppState createState() => _CameraAppState();
-// }
+// //   @override
+// //   _CameraAppState createState() => _CameraAppState();
+// // }
 
-// class _CameraAppState extends State<CameraApp> {
-//   List<String> pictureSizes = <String>[];
-//   String? imagePath;
+// // class _CameraAppState extends State<CameraApp> {
+// //   List<String> pictureSizes = <String>[];
+// //   String? imagePath;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: const Text('AdvCamera Example'),
-//       ),
-//       body: SafeArea(
-//         child: AdvCamera(
-//           initialCameraType: CameraType.rear,
-//           onCameraCreated: _onCameraCreated,
-//           onImageCaptured: (String path) {
-//             if (this.mounted)
-//               setState(() {
-//                 imagePath = path;
-//               });
-//           },
-//           cameraPreviewRatio: CameraPreviewRatio.r16_9,
-//           focusRectColor: Colors.purple,
-//           focusRectSize: 200,
-//         ),
-//       ),
-//       floatingActionButton: FloatingActionButton(
-//         heroTag: "capture",
-//         child: Icon(Icons.camera),
-//         onPressed: () {
-//           cameraController!.captureImage();
-//         },
-//       ),
-//     );
-//   }
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Scaffold(
+// //       appBar: AppBar(
+// //         title: const Text('AdvCamera Example'),
+// //       ),
+// //       body: SafeArea(
+// //         child: AdvCamera(
+// //           initialCameraType: CameraType.rear,
+// //           onCameraCreated: _onCameraCreated,
+// //           onImageCaptured: (String path) {
+// //             if (this.mounted)
+// //               setState(() {
+// //                 imagePath = path;
+// //               });
+// //           },
+// //           cameraPreviewRatio: CameraPreviewRatio.r16_9,
+// //           focusRectColor: Colors.purple,
+// //           focusRectSize: 200,
+// //         ),
+// //       ),
+// //       floatingActionButton: FloatingActionButton(
+// //         heroTag: "capture",
+// //         child: Icon(Icons.camera),
+// //         onPressed: () {
+// //           cameraController!.captureImage();
+// //         },
+// //       ),
+// //     );
+// //   }
 
-//   AdvCameraController? cameraController;
+// //   AdvCameraController? cameraController;
 
-//   _onCameraCreated(AdvCameraController controller) {
-//     this.cameraController = controller;
+// //   _onCameraCreated(AdvCameraController controller) {
+// //     this.cameraController = controller;
 
-//     this.cameraController!.getPictureSizes().then((pictureSizes) {
-//       setState(() {
-//         this.pictureSizes = pictureSizes ?? <String>[];
-//       });
-//     });
-//   }
-// }
-//===========================================================
-// import 'package:flutter/material.dart';
-// import 'package:camera/camera.dart';
+// //     this.cameraController!.getPictureSizes().then((pictureSizes) {
+// //       setState(() {
+// //         this.pictureSizes = pictureSizes ?? <String>[];
+// //       });
+// //     });
+// //   }
+// // }
+// //===========================================================
+// // import 'package:flutter/material.dart';
+// // import 'package:camera/camera.dart';
 
-// List<CameraDescription> cameras = [];
+// // List<CameraDescription> cameras = [];
 
-// Future<void> main() async {
-//   // Initialize cameras
-//   WidgetsFlutterBinding.ensureInitialized();
-//   cameras = await availableCameras();
-//   runApp(MyApp());
-// }
+// // Future<void> main() async {
+// //   // Initialize cameras
+// //   WidgetsFlutterBinding.ensureInitialized();
+// //   cameras = await availableCameras();
+// //   runApp(MyApp());
+// // }
 
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'Autozoom Camera Demo',
-//       home: AutozoomCamera(),
-//     );
-//   }
-// }
+// // class MyApp extends StatelessWidget {
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return MaterialApp(
+// //       title: 'Autozoom Camera Demo',
+// //       home: AutozoomCamera(),
+// //     );
+// //   }
+// // }
 
-// class AutozoomCamera extends StatefulWidget {
-//   @override
-//   _AutozoomCameraState createState() => _AutozoomCameraState();
-// }
+// // class AutozoomCamera extends StatefulWidget {
+// //   @override
+// //   _AutozoomCameraState createState() => _AutozoomCameraState();
+// // }
 
-// class _AutozoomCameraState extends State<AutozoomCamera> {
-//   late CameraController _controller;
-//   double _zoomLevel = 1.0;
+// // class _AutozoomCameraState extends State<AutozoomCamera> {
+// //   late CameraController _controller;
+// //   double _zoomLevel = 1.0;
 
-//   @override
-//   void initState() {
-//     super.initState();
+// //   @override
+// //   void initState() {
+// //     super.initState();
 
-//     // Initialize camera controller
-//     _controller = CameraController(cameras[0], ResolutionPreset.medium);
-//     _controller.initialize().then((_) {
-//       if (!mounted) {
-//         return;
-//       }
-//       setState(() {});
-//       // Start autozoom functionality
-//       _controller.startImageStream((CameraImage image) {
-//         setState(() {
-//           _zoomLevel = calculateZoomLevel(image);
-//           _controller.setZoomLevel(_zoomLevel);
-//         });
-//       });
-//     });
-//   }
+// //     // Initialize camera controller
+// //     _controller = CameraController(cameras[0], ResolutionPreset.medium);
+// //     _controller.initialize().then((_) {
+// //       if (!mounted) {
+// //         return;
+// //       }
+// //       setState(() {});
+// //       // Start autozoom functionality
+// //       _controller.startImageStream((CameraImage image) {
+// //         setState(() {
+// //           _zoomLevel = calculateZoomLevel(image);
+// //           _controller.setZoomLevel(_zoomLevel);
+// //         });
+// //       });
+// //     });
+// //   }
 
-//   double calculateZoomLevel(CameraImage image) {
-//     // Calculate the average brightness of the image
-//     var totalBrightness = 0.0;
-//     for (var plane in image.planes) {
-//       for (var i = 0; i < plane.bytes.length; i++) {
-//         totalBrightness += plane.bytes[i];
-//       }
-//     }
-//     var avgBrightness = totalBrightness / (image.width * image.height);
+// //   double calculateZoomLevel(CameraImage image) {
+// //     // Calculate the average brightness of the image
+// //     var totalBrightness = 0.0;
+// //     for (var plane in image.planes) {
+// //       for (var i = 0; i < plane.bytes.length; i++) {
+// //         totalBrightness += plane.bytes[i];
+// //       }
+// //     }
+// //     var avgBrightness = totalBrightness / (image.width * image.height);
 
-//     // Calculate the zoom level based on the average brightness
-//     var zoomLevel = (avgBrightness / 255) * 2;
-//     if (zoomLevel < 1.0) {
-//       zoomLevel = 1.0;
-//     } else if (zoomLevel > 10.0) {
-//       zoomLevel = 10.0;
-//     }
-//     return zoomLevel;
-//   }
+// //     // Calculate the zoom level based on the average brightness
+// //     var zoomLevel = (avgBrightness / 255) * 2;
+// //     if (zoomLevel < 1.0) {
+// //       zoomLevel = 1.0;
+// //     } else if (zoomLevel > 10.0) {
+// //       zoomLevel = 10.0;
+// //     }
+// //     return zoomLevel;
+// //   }
 
-//   @override
-//   Widget build(BuildContext context) {
-//     if (!_controller.value.isInitialized) {
-//       return Container();
-//     }
-//     return AspectRatio(
-//       aspectRatio: _controller.value.aspectRatio,
-//       child: CameraPreview(_controller),
-//     );
-//   }
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     if (!_controller.value.isInitialized) {
+// //       return Container();
+// //     }
+// //     return AspectRatio(
+// //       aspectRatio: _controller.value.aspectRatio,
+// //       child: CameraPreview(_controller),
+// //     );
+// //   }
 
-//   @override
-//   void dispose() {
-//     _controller.dispose();
-//     super.dispose();
-//   }
-// }
+// //   @override
+// //   void dispose() {
+// //     _controller.dispose();
+// //     super.dispose();
+// //   }
+// // }
 
 import 'dart:async';
 import 'dart:io';
@@ -321,3 +321,126 @@ class _CameraScreenState extends State<CameraScreen> {
         ));
   }
 }
+
+// import 'package:camera/camera.dart';
+// import 'package:flutter/material.dart';
+// import 'package:tflite/tflite.dart';
+
+// class AutoZoomCamera extends StatefulWidget {
+//   final List<CameraDescription> cameras;
+
+//   const AutoZoomCamera({
+//     Key? key,
+//     required this.cameras,
+//   }) : super(key: key);
+
+//   @override
+//   _AutoZoomCameraState createState() => _AutoZoomCameraState();
+// }
+
+// class _AutoZoomCameraState extends State<AutoZoomCamera> {
+//   late CameraController _controller;
+//   late int _selectedCameraIdx;
+//   late bool _isDetecting;
+
+//   @override
+//   void initState() {
+//     super.initState();
+
+//     _selectedCameraIdx = 0;
+//     _isDetecting = false;
+//     _initializeCamera();
+//   }
+
+//   @override
+//   void dispose() {
+//     _controller.dispose();
+//     super.dispose();
+//   }
+
+//   Future<void> _initializeCamera() async {
+//     final CameraDescription cameraDescription =
+//         widget.cameras[_selectedCameraIdx];
+
+//     _controller = CameraController(
+//       cameraDescription,
+//       ResolutionPreset.high,
+//       enableAudio: false,
+//     );
+
+//     await _controller.initialize();
+
+//     await _controller.lockCaptureOrientation();
+
+//     _controller.startImageStream((image) {
+//       if (_isDetecting) return;
+
+//       _isDetecting = true;
+
+//       _detect(image);
+//     });
+//   }
+
+//   Future<void> _detect(CameraImage image) async {
+//     final List? recognitions = await Tflite.detectObjectOnFrame(
+//       bytesList: image.planes.map((plane) {
+//         return plane.bytes;
+//       }).toList(),
+//       model: "SSDMobileNet",
+//       imageHeight: image.height,
+//       imageWidth: image.width,
+//       imageMean: 127.5,
+//       imageStd: 127.5,
+//       numResultsPerClass: 1,
+//       threshold: 0.3,
+//     );
+
+//     if (recognitions!.isNotEmpty) {
+//       // Get the largest object detected
+//       final Map<String, dynamic> largestObject = recognitions.reduce(
+//         (a, b) => a["confidenceInClass"] > b["confidenceInClass"] ? a : b,
+//       );
+
+//       // Zoom in if object is too small
+//       if (largestObject["confidenceInClass"] < 0.5) {
+//         final double zoomLevel = _controller.value.aspectRatio + 0.1;
+
+//         if (zoomLevel > await _controller.getMaxZoomLevel()) return;
+
+//         await _controller.setZoomLevel(zoomLevel);
+//       }
+//     }
+
+//     _isDetecting = false;
+//   }
+
+//   void _toggleCamera() {
+//     _selectedCameraIdx = _selectedCameraIdx < widget.cameras.length - 1
+//         ? _selectedCameraIdx + 1
+//         : 0;
+
+//     _controller.dispose();
+
+//     _initializeCamera();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text('Auto Zoom Camera'),
+//         centerTitle: true,
+//         actions: [
+//           IconButton(
+//             icon: Icon(Icons.switch_camera),
+//             onPressed: _toggleCamera,
+//           ),
+//         ],
+//       ),
+//       body: AspectRatio(
+//         aspectRatio: _controller.value.aspectRatio,
+//         child: CameraPreview(_controller),
+//       ),
+//     );
+//   }
+// }
